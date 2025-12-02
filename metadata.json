@@ -1,0 +1,5 @@
+
+{
+  "name": "Agente Interpretador",
+  "description": "Um agente inteligente que responde a perguntas sobre uma base de conhecimento pré-carregada (simulando conteúdo de PDF) usando a API OpenAI, com respostas em streaming e sem expor a chave no frontend."
+}
