@@ -11,13 +11,31 @@ export const Header: React.FC<Props> = ({ onClear, hasBase }) => {
     <header className="p-4 bg-gray-900/80 backdrop-blur-sm border-b border-gray-700/50 sticky top-0 z-10">
       <div className="grid grid-cols-3 items-center">
         <div className="flex items-center">
-          <img src={leftLogo} alt="Centauro" className="h-8 w-auto rounded" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+          <img
+            src={leftLogo}
+            alt="Centauro"
+            className="h-8 w-auto rounded"
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              if (img.src.endsWith('/logo-centauro.svg')) { img.style.display = 'none'; }
+              else { img.src = '/logo-centauro.svg'; }
+            }}
+          />
         </div>
         <div className="text-center">
           <h1 className="text-xl font-bold text-white">Agente Interpretador</h1>
         </div>
         <div className="flex items-center justify-end space-x-3">
-          <img src={rightLogo} alt="MDH" className="h-8 w-auto rounded" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+          <img
+            src={rightLogo}
+            alt="MDH"
+            className="h-8 w-auto rounded"
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              if (img.src.endsWith('/logo-mdh.svg')) { img.style.display = 'none'; }
+              else { img.src = '/logo-mdh.svg'; }
+            }}
+          />
           {hasBase && onClear && (
             <button
               onClick={onClear}
