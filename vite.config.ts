@@ -15,6 +15,7 @@ export default defineConfig({
     outDir: path.resolve(__dirname, 'server', 'dist'),
     chunkSizeWarningLimit: 1024
   },
+  publicDir: 'public',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '.'),
